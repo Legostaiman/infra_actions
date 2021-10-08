@@ -26,7 +26,7 @@ jobs:
       run: |
         # запуск проверки проекта по flake8
         python -m flake8
-        # перейти в папку, содержащую manage.py - <корневая_папка>/<папка_проекта>/manage.py
+        # перейти в папку, содержащую manage.py - infra_actions/infra_project/manage.py
         cd infra_project/
         # запустить написанные разработчиком тесты
         python manage.py test
@@ -61,7 +61,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
+          # passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
           script: |
             # Выполняет pull образа с DockerHub
             sudo docker pull 411795/infra_actions
